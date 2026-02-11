@@ -13,7 +13,7 @@ This repo contains **ONLY**:
 - **`openpilot_files/selfdrive/modeld_detection_second.py`** — Alternative modified modeld file (copy this into your openpilot)
 
 **You will need to provide:**
-- Your own openpilot repository checkout
+- Openpilot repository (v0.9.8)
 - YOLO (for object detection)
 - Depth Anything V2 (for depth estimation)
 
@@ -49,44 +49,8 @@ Read **`docs/DATA_PREPARATION_GUIDE.md`** for the complete workflow:
 3. **Run offline labeling:**
    - Use **YOLO** to detect objects (cars, pedestrians, etc.)
    - Use **Depth Anything V2** to estimate depth maps
-   - Merge detections + depth into training-ready labels
-
 ---
 
-## 📚 What You'll Learn
-
-- How openpilot's vision model works (feature extraction)
-- How to capture training data from replays
-- How to use modern CV tools (YOLO, depth estimation) for labeling
-- How to organize datasets for machine learning
-
----
-
-## ✅ Deliverables
-
-At the end, you should have:
-
-- A dataset folder with multiple segments (`segment_00`, `segment_01`, ...)
-- Each segment containing:
-  - `raw/` — camera images
-  - `features/` — model feature embeddings
-  - `depth_npy/` — depth maps (if you ran depth estimation)
-  - `labels/` — object detection labels (if you ran YOLO)
-- A merged label file combining detections + depth statistics
-- A short report summarizing your dataset
-
----
-
-## 🛠️ Prerequisites
-
-- Linux environment (Ubuntu recommended)
-- Python 3 with openpilot dependencies
-- GPU (recommended, for faster depth + detection)
-- Enough disk space (datasets can be large)
-- **YOLO** installed (e.g., `pip install ultralytics`)
-- **Depth Anything V2** repository cloned and set up
-
----
 
 ## 📖 Full Instructions
 
@@ -103,10 +67,4 @@ If you encounter issues:
 3. Check that replay is running and publishing camera frames
 4. See the troubleshooting section in `docs/DATA_PREPARATION_GUIDE.md`
 
----
 
-## 📝 Notes
-
-- The modified `modeld` files save dataset frames/features but otherwise behave like normal openpilot modeld
-- Depth estimation produces **relative depth** (not true meters) unless you add calibration
-- Object detection confidence scores are **not distance** — combine with depth for distance estimates
