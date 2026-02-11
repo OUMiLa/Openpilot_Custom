@@ -40,7 +40,7 @@ cp openpilot_files/selfdrive/modeld_detection_second.py ~/openpilot/selfdrive/mo
 
 **Note:** You can use either `modeld_detection_first.py` or `modeld_detection_second.py`. The second version includes automatic segment management (saves to `segment_00`, `segment_01`, etc.).
 
-### Route Play
+### Step 3: Route Play
 You may use the following public routes for testing:
 
 - `d34c14daa88a1e86/0000013e--0859dd3dcc`
@@ -51,7 +51,7 @@ Run replay using:
 tools/replay/replay d34c14daa88a1e86/0000013e--0859dd3dcc
 
 
-### Step 3: Follow the guide
+### Step 4: Follow the guide
 
 Read **`docs/DATA_PREPARATION_GUIDE.md`** for the complete workflow:
 
